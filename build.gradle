@@ -57,3 +57,7 @@ tasks.register('simTest', JavaExec) {
     mainClass = 'com.tubilt.jjk.sim.SimSelfTest'
     jvmArgs '-Dstdout.encoding=UTF-8'
 }
+
+// src/test 는 JUnit 이 아닌 main() 자체 검증 → test 태스크 대신 simTest 로 검증 (Gradle 9: 빈 test 는 실패 처리)
+tasks.named('test', Test).configure { failOnNoDiscoveredTests = false }
+tasks.named('check').configure { dependsOn 'simTest' }
