@@ -322,14 +322,14 @@ final class BlueprintSelfTest {
             check("크기 0 → 거부", Blueprint.fromTag(t, false, e) == null, String.join(",", e));
             e.clear(); t = base(300, 1, 1);
             check("크기 제한 초과 → 거부", Blueprint.fromTag(t, false, e) == null, String.join(",", e));
-            e.clear(); t = base(3, 1, 1);
+            e.clear(); t = base(8, 1, 1);
             ListTag pal = new ListTag();
             pal.add(NbtUtils.writeBlockState(Blocks.STONE.defaultBlockState()));
             CompoundTag unk = new CompoundTag(); unk.putString("Name", "minecraft:not_a_block"); pal.add(unk);
             pal.add(NbtUtils.writeBlockState(Blocks.COMMAND_BLOCK.defaultBlockState()));
             pal.add(NbtUtils.writeBlockState(Blocks.CHEST.defaultBlockState()));
             t.put("palette", pal);
-            t.putIntArray("blocks", new int[]{0, 0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 2, 0, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 9, 2, 0, 0, 3});
+            t.putIntArray("blocks", new int[]{0, 0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 2, 0, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 9, 2, 0, 0, 3});
             ListTag bes = new ListTag();
             CompoundTag cb = new CompoundTag(); cb.putInt("i", 2); CompoundTag cbn = new CompoundTag(); cbn.putString("id", "minecraft:command_block"); cbn.putString("Command", "op @a"); cb.put("nbt", cbn); bes.add(cb);
             CompoundTag ch = new CompoundTag(); ch.putInt("i", 6); CompoundTag chn = new CompoundTag(); chn.putString("id", "minecraft:chest"); chn.putString("LootTable", "minecraft:chests/end_city_treasure"); chn.putLong("LootTableSeed", 1); ch.put("nbt", chn); bes.add(ch);
@@ -435,8 +435,14 @@ final class BlueprintSelfTest {
             check("대형 제조 공장: 크래프터 공급 호퍼 찾음", fed == 1, "");
             PlaceJob logi = (PlaceJob) ctx.get("logi");
             BlockPos top = find(logi, s -> s.is(Blocks.BARREL)).stream().max(java.util.Comparator.comparingInt(BlockPos::getY)).orElse(null);
-            if (top != null) for (int i = 0; i < 4; i++) put(top, new ItemStack(Items.COBBLESTONE, 64));
-            ctx.put("logiTop", top);
+            List<BlockPos> store = find(logi, s -> s.is(Blocks.BARREL)).stream().filter(p -> p.getY() == logi.min.getY() + 1)
+                    .sorted(java.util.Comparator.comparingInt(BlockPos::getX)).toList();
+            if (!store.isEmpty() && lvl.getBlockEntity(store.get(0)) instanceof Container first) {
+                for (int i = 0; i < first.getContainerSize(); i++) first.setItem(i, new ItemStack(Items.COBBLESTONE, 64));   // 첫 창고 가득
+                if (lvl.getBlockEntity(store.get(0).above()) instanceof Container h) for (int i = 0; i < h.getContainerSize(); i++) h.setItem(i, new ItemStack(Items.COBBLESTONE, 64));
+            }
+            if (top != null) for (int i = 0; i < 4; i++) put(top, new ItemStack(Items.IRON_INGOT, 64));
+            ctx.put("logiTop", top); ctx.put("logiStore", store);
         });
         waitTicks(300);
         step(() -> {
@@ -448,15 +454,14 @@ final class BlueprintSelfTest {
             PlaceJob sm = (PlaceJob) ctx.get("smelt"), fac = (PlaceJob) ctx.get("factory"), logi = (PlaceJob) ctx.get("logi");
             check("자동 제련 공장: 원료 → 제련 → 출력 통", count(sm, Items.IRON_INGOT) >= 6, "철 주괴 " + count(sm, Items.IRON_INGOT) + " (투입 원광 " + 3 * (int) ctx.getOrDefault("smelt_in", 0) + ")");
             check("대형 제조 공장: 모래 → 유리 → 유리판 → 창고 (전체 라인)", count(fac, Items.GLASS_PANE) >= 32, "유리판 " + count(fac, Items.GLASS_PANE) + ", 남은 유리 " + count(fac, Items.GLASS));
-            BlockPos top = (BlockPos) ctx.get("logiTop");
-            int east = 0, south = 0;
-            for (BlockPos p : find(logi, s -> s.is(Blocks.BARREL))) {
-                if (p.equals(top) || !(lvl.getBlockEntity(p) instanceof Container c)) continue;
-                int n = 0; for (int i = 0; i < c.getContainerSize(); i++) n += c.getItem(i).getCount();
-                if (n == 0) continue;
-                if (p.getX() == top.getX()) south++; else east++;
+            @SuppressWarnings("unchecked") List<BlockPos> store = (List<BlockPos>) ctx.get("logiStore");
+            int later = 0, firstIron = 0;
+            for (int k = 0; k < store.size(); k++) {
+                if (!(lvl.getBlockEntity(store.get(k)) instanceof Container c)) continue;
+                int n = 0; for (int i = 0; i < c.getContainerSize(); i++) if (c.getItem(i).is(Items.IRON_INGOT)) n += c.getItem(i).getCount();
+                if (k == 0) firstIron = n; else later += n;
             }
-            check("물류 센터: 분배기가 두 줄 창고로 나눔", east > 0 && south > 0, "동쪽 줄 " + east + "통 · 남쪽 줄 " + south + "통");
+            check("물류 센터: 창고 " + store.size() + "칸 — 첫 창고가 차면 다음 창고로 분배", store.size() == 5 && firstIron == 0 && later > 0, "다음 창고들 철 " + later + " · 첫 창고 " + firstIron);
         });
 
         // T10 재시작 시험 준비: 대형 사용자 설계도 저장 → 배치 시작 → 도중에 서버 종료

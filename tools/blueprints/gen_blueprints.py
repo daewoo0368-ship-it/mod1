@@ -287,29 +287,26 @@ def large_manufacturing_factory():
 
 def logistics_center():
     bp = BP("jjk:logistics_center", "물류 센터",
-            "투입 통에 넣은 물건을 호퍼 분배기가 두 줄의 넘침식 창고로 나눠 보낸다. 위 호퍼가 동쪽 줄로 밀어내는 동안 "
-            "그 아래 호퍼가 같은 호퍼에서 끌어가 남쪽 줄로 보내므로 물건이 두 줄에 번갈아 쌓인다. 각 줄은 끝 통부터 채워진다.",
-            ["working|창고|넘침식 통 7칸 (두 줄)",
+            "투입 통에 넣은 물건이 호퍼 컨베이어를 따라 흐르고, 컨베이어 아래 분배 호퍼가 창고 통에 차례로 나눠 넣는다. "
+            "앞 창고가 가득 차면 다음 창고로 넘어가고, 모든 창고가 차면 끝의 넘침 통에 모인다. 넘침 통에 물건이 있으면 램프가 켜진다.",
+            ["working|창고|창고 통 5칸 + 넘침 통 (앞 칸부터 채움)",
              "working|컨베이어|호퍼 줄",
-             "working|분배기|호퍼 분기 — 두 줄로 번갈아 분배",
+             "working|분배기|컨베이어 아래 분배 호퍼 — 창고가 차면 다음 칸으로",
+             "working|가득 참 표시|넘침 통 감지 램프",
              "planned|자동 운송 시스템|수레·드론 운송 미구현"])
-    bp.fill(0, 0, 0, 8, 0, 8, "minecraft:smooth_stone")
-    bp.set(1, 7, 2, "minecraft:barrel", {"facing": "up", "open": "false"})      # 투입 통
-    bp.set(1, 6, 2, "minecraft:hopper", {"facing": "east", "enabled": "true"})  # 분배 호퍼 (동쪽 줄)
-    warehouse_stairs(bp, 2, 6, 2, 4)                                              # 통 (2,6,2) → … → (6,2,2)
-    bp.set(1, 5, 2, "minecraft:hopper", {"facing": "south", "enabled": "true"}) # 분기 호퍼 (남쪽 줄)
-    bp.set(1, 5, 3, "minecraft:barrel", {"facing": "up", "open": "false"})
-    bp.set(1, 4, 3, "minecraft:hopper", {"facing": "south", "enabled": "true"})
-    bp.set(1, 4, 4, "minecraft:barrel", {"facing": "up", "open": "false"})
-    bp.set(1, 3, 4, "minecraft:hopper", {"facing": "south", "enabled": "true"})
-    bp.set(1, 3, 5, "minecraft:barrel", {"facing": "up", "open": "false"})
-    # 받침 기둥 (통·호퍼를 받침)
-    for (x, y, z) in [(2, 5, 2), (3, 4, 2), (4, 3, 2), (5, 2, 2)]:
-        bp.fill(x, 1, z, x, y - 1, z, "minecraft:stone_bricks")
-    bp.fill(1, 1, 5, 1, 2, 5, "minecraft:stone_bricks")
-    bp.fill(1, 1, 2, 1, 4, 2, "minecraft:stone_bricks")
-    bp.set(6, 1, 2, "minecraft:stone_bricks")
-    pillar_lights(bp, [(0, 0), (8, 0), (0, 8), (8, 8)], 1, 8)
+    bp.fill(0, 0, 0, 9, 0, 4, "minecraft:smooth_stone")
+    bp.set(1, 4, 2, "minecraft:barrel", {"facing": "up", "open": "false"})          # 투입 통
+    for x in range(1, 7):
+        bp.set(x, 3, 2, "minecraft:hopper", {"facing": "east", "enabled": "true"})   # 컨베이어
+    for x in range(2, 7):
+        bp.set(x, 2, 2, "minecraft:hopper", {"facing": "down", "enabled": "true"})   # 분배 호퍼
+        bp.set(x, 1, 2, "minecraft:barrel", {"facing": "up", "open": "false"})       # 창고
+    bp.set(7, 3, 2, "minecraft:barrel", {"facing": "up", "open": "false"})          # 넘침 통
+    bp.fill(7, 1, 2, 7, 2, 2, "minecraft:stone_bricks")
+    bp.fill(1, 1, 2, 1, 2, 2, "minecraft:stone_bricks")
+    lamp_monitor(bp, 8, 3, 2)
+    bp.fill(8, 1, 2, 9, 2, 2, "minecraft:stone_bricks")
+    pillar_lights(bp, [(0, 0), (9, 0), (0, 4), (9, 4)], 1, 6)
     return bp
 
 
