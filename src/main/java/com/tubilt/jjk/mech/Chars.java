@@ -172,7 +172,7 @@ public final class Chars {
             case "na_overtime" -> { s.fx.add(new Overtime()); Koming.bar(p, "§e초과근무 §7— 잔업 시작"); }
             case "na_cleave" -> cleave(p, l, s);
             case "y_rika" -> { s.fx.add(new Rika(p)); Koming.bar(p, "§f리카 §7— 완전현현"); }
-            case "y_love" -> { s.fx.add(new Love(p)); Koming.bar(p, "§d순애빔 §7— 충전"); }
+            case "y_love" -> { s.fx.add(new Love()); Koming.bar(p, "§d순애빔 §7— 충전"); }
             case "t_halberd" -> { s.fx.add(new Halberd(p)); Holo.sfx(l, eye, "whoosh", 1.2f, 1.4f); Koming.bar(p, "§a천역모"); }
             case "t_dash" -> dash(p, l, s);
             case "t_heaven" -> {
