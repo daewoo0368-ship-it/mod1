@@ -10,6 +10,7 @@ jobs:
       - name: 시뮬레이션 코어 테스트 (Minecraft 비의존)
         run: chmod +x run_simtest.sh && ./run_simtest.sh
       - name: Forge 빌드 (컴파일)
+        shell: bash  # pipefail 적용: tee 로 감싸도 빌드 실패가 단계 실패로 잡힘
         run: chmod +x gradlew && ./gradlew build --no-daemon --stacktrace 2>&1 | tee build.log
       - uses: actions/upload-artifact@v4
         if: always()
