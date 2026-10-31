@@ -94,6 +94,7 @@ public class MachineBE extends BlockEntity implements GeoBlockEntity {
         double pred = gotFirst ? angleNow() : an;
         sOmega = om; sAngle = an; stamp = System.nanoTime();
         jump = gotFirst ? pred - an : 0; gotFirst = true;
+        if (part != null) push();   // 서버에서 이미 네트워크에 있는 기계에 데이터를 복원(설계도 덮어쓰기)하면 부품에도 반영
     }
 
     // ───────────── 동기화 ─────────────
@@ -110,6 +111,20 @@ public class MachineBE extends BlockEntity implements GeoBlockEntity {
         return sAngle + sOmega * dt + jump * Math.exp(-dt / 0.15);
     }
     public double omegaNow() { return sOmega; }
+
+    // ───────────── 서버 상태 조회 (설계도 자체 검증용) ─────────────
+    /** 물리 엔진에 등록되어 네트워크에 들어가 있는지. */
+    public boolean simRegistered() { return part != null; }
+    /** 현재 각속도 (rad/s, 이 블록 축의 + 방향 기준). */
+    public double simOmega() { return part != null ? part.omega : sOmega; }
+    public double motorThrottle() { return part instanceof Parts.Motor m ? m.throttle() : sThrottle; }
+    public int motorDir() { return part instanceof Parts.Motor m ? m.direction() : sDir; }
+    /** 전동기 설정 (전동기가 아니면 무시). */
+    public void setMotor(double throttle, int dir) {
+        if (part instanceof Parts.Motor m) { m.setThrottle(throttle); m.setDirection(dir); }
+        sThrottle = Math.max(0, Math.min(1, throttle)); sDir = dir < 0 ? -1 : 1;
+        setChanged();
+    }
 
     // ───────────── 상호작용 ─────────────
     void interact(Player p) {

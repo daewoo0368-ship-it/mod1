@@ -221,6 +221,8 @@ public final class JjkItems {
     public static final RegistryObject<Item> DEV_PHONE = ITEMS.register("dev_phone", () -> new Item(new Item.Properties().setId(ITEMS.key("dev_phone")).stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> DEV_LEVER = ITEMS.register("dev_lever", () -> new Item(new Item.Properties().setId(ITEMS.key("dev_lever")).stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> DEV_BUTTON = ITEMS.register("dev_button", () -> new Item(new Item.Properties().setId(ITEMS.key("dev_button")).stacksTo(1).rarity(Rarity.EPIC)));
+    /** 건축물 소환기 — 개발자 전용 설계도 도구 (com.tubilt.jjk.blueprint.StructureSpawner). */
+    public static final RegistryObject<Item> STRUCTURE_SPAWNER = ITEMS.register("structure_spawner", () -> new Item(new Item.Properties().setId(ITEMS.key("structure_spawner")).stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
 
     /** 바닐라 기반 옛 아이템 → 전용 아이템 (옛 아이템도 계속 인식). */
     public static Item alt(Item vanilla) {

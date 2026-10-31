@@ -201,5 +201,6 @@
  "block.jjk.mech_gear_l": "대형 기어 (28T)",
  "block.jjk.mech_motor": "시험용 전동기",
  "block.jjk.mech_flywheel": "플라이휠",
- "block.jjk.mech_fan": "팬 부하"
+ "block.jjk.mech_fan": "팬 부하",
+ "item.jjk.structure_spawner": "건축물 소환기"
 }

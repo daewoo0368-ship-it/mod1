@@ -102,6 +102,8 @@ public final class JjkClient {
         JjkNet.onCam = QuickCam::start;
         JjkNet.onScreen = ScreenFx::start;
         JjkNet.onMeta = MetaFx::start;
+        JjkNet.onBpList = BlueprintScreen::receive;
+        JjkNet.onBpDetail = BlueprintScreen::receiveDetail;
         JjkNet.onPlanet = PlanetCine::start;
         PlanetCine.init();
         PlanetRender.init();

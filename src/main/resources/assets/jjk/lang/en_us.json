@@ -201,5 +201,6 @@
  "block.jjk.mech_gear_l": "Large Gear (28T)",
  "block.jjk.mech_motor": "Test Motor",
  "block.jjk.mech_flywheel": "Flywheel",
- "block.jjk.mech_fan": "Fan Load"
+ "block.jjk.mech_fan": "Fan Load",
+ "item.jjk.structure_spawner": "Structure Spawner"
 }

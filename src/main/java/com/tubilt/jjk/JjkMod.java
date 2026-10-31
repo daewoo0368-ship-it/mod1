@@ -40,6 +40,8 @@ public class JjkMod {
         JjkTabs.init(modBus);
         com.tubilt.jjk.machine.Machines.init(modBus);
         com.tubilt.jjk.mech.MechManager.init();
+        com.tubilt.jjk.blueprint.BlueprintJobs.init();
+        com.tubilt.jjk.blueprint.StructureSpawner.init();
         TickEvent.ServerTickEvent.Post.BUS.addListener(e -> {
             MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
             if (server != null) tick(server);

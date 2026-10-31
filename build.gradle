@@ -58,6 +58,15 @@ tasks.register('simTest', JavaExec) {
     jvmArgs '-Dstdout.encoding=UTF-8'
 }
 
-// src/test 는 JUnit 이 아닌 main() 자체 검증 → test 태스크 대신 simTest 로 검증 (Gradle 9: 빈 test 는 실패 처리)
+// 건축물 소환기 핵심 로직(변환·정책·고정 설계도·회전 후 기계 네트워크) 자체 검증
+tasks.register('bpTest', JavaExec) {
+    group = 'verification'
+    classpath = sourceSets.main.output + sourceSets.test.output
+    mainClass = 'com.tubilt.jjk.blueprint.BpSelfTest'
+    workingDir = layout.projectDirectory
+    jvmArgs '-Dstdout.encoding=UTF-8'
+}
+
+// src/test 는 JUnit 이 아닌 main() 자체 검증 → test 태스크 대신 simTest·bpTest 로 검증 (Gradle 9: 빈 test 는 실패 처리)
 tasks.named('test', Test).configure { failOnNoDiscoveredTests = false }
-tasks.named('check').configure { dependsOn 'simTest' }
+tasks.named('check').configure { dependsOn 'simTest', 'bpTest' }

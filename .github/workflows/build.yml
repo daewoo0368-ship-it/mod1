@@ -7,11 +7,52 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: '21' }
-      - name: 시뮬레이션 코어 테스트 (Minecraft 비의존)
+      - name: 시뮬레이션 코어·설계도 핵심 로직 테스트 (Minecraft 비의존)
         run: chmod +x run_simtest.sh && ./run_simtest.sh
       - name: Forge 빌드 (컴파일)
         shell: bash  # pipefail 적용: tee 로 감싸도 빌드 실패가 단계 실패로 잡힘
         run: chmod +x gradlew && ./gradlew build --no-daemon --stacktrace 2>&1 | tee build.log
+      # ── 실제 Minecraft 전용 서버에서 건축물 소환기 자체 검증 (2단계: 1단계 → 서버 종료 → 재시작 후 2단계) ──
+      # 전용 서버를 실행하려면 Minecraft EULA(https://aka.ms/MinecraftEULA) 동의가 필요하다. 이 CI 는 테스트 서버 실행을 위해 동의 파일을 만든다.
+      - name: 테스트 서버 준비 (평지 월드)
+        run: |
+          mkdir -p run
+          echo "eula=true" > run/eula.txt
+          cat > run/server.properties <<'PROPS'
+          level-type=minecraft\:flat
+          generate-structures=false
+          spawn-monsters=false
+          spawn-animals=false
+          online-mode=false
+          pause-when-empty-seconds=-1
+          spawn-protection=0
+          view-distance=4
+          simulation-distance=4
+          server-port=25599
+          PROPS
+      - name: 서버 자체 검증 1단계
+        shell: bash
+        run: JJK_SELFTEST=1 timeout 1500 ./gradlew runServer --no-daemon > selftest1.log 2>&1 || true; grep -E "\[selftest\]|Exception" selftest1.log | tail -300
+      - name: 서버 자체 검증 2단계 (재시작 후)
+        shell: bash
+        run: JJK_SELFTEST=2 timeout 1500 ./gradlew runServer --no-daemon > selftest2.log 2>&1 || true; grep -E "\[selftest\]|Exception" selftest2.log | tail -300
+      - name: 자체 검증 결과
+        shell: bash
+        run: |
+          for p in 1 2; do
+            echo "──── 단계 $p ────"
+            if [ ! -f run/jjk-selftest-$p.txt ]; then echo "결과 파일 없음 (서버가 시작되지 않았거나 중간에 멈춤)"; tail -80 selftest$p.log; exit 1; fi
+            cat run/jjk-selftest-$p.txt
+          done
+          grep -q "RESULT: PASS" run/jjk-selftest-1.txt && grep -q "RESULT: PASS" run/jjk-selftest-2.txt
       - uses: actions/upload-artifact@v4
         if: always()
-        with: { name: build-log-and-jar, path: "build.log\nbuild/libs/*.jar" }
+        with:
+          name: build-log-and-jar
+          path: |
+            build.log
+            build/libs/*.jar
+            selftest1.log
+            selftest2.log
+            run/jjk-selftest-*.txt
+            run/logs/latest.log

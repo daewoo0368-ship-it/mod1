@@ -130,4 +130,59 @@ public final class Payloads {
                 ByteBufCodecs.DOUBLE, Cine::tx, ByteBufCodecs.DOUBLE, Cine::ty, ByteBufCodecs.DOUBLE, Cine::tz, Cine::new);
         @Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
     }
+
+    // ───────────── 건축물 소환기 ─────────────
+
+    /** C→S: 건축물 소환기 요청. op 는 StructureSpawner.OP_*, id 는 설계도 id, text 는 이름·설명·설정 등. 서버가 모두 다시 검증한다. */
+    public record BpReq(int op, String id, String text) implements CustomPacketPayload {
+        public static final Type<BpReq> TYPE = new Type<>(JjkMod.id("bp_req"));
+        public static final StreamCodec<RegistryFriendlyByteBuf, BpReq> CODEC = StreamCodec.composite(
+                ByteBufCodecs.VAR_INT, BpReq::op, ByteBufCodecs.STRING_UTF8, BpReq::id, ByteBufCodecs.STRING_UTF8, BpReq::text, BpReq::new);
+        @Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
+    }
+
+    /** 설계도 목록의 한 줄. */
+    public record BpEntry(String id, boolean fixed, boolean editable, String name, String desc, String author, String version,
+                          int sx, int sy, int sz, int blocks, int machines, int materials, int warnings, String features) {
+        static void write(RegistryFriendlyByteBuf b, BpEntry e) {
+            b.writeUtf(e.id); b.writeBoolean(e.fixed); b.writeBoolean(e.editable); b.writeUtf(e.name); b.writeUtf(e.desc); b.writeUtf(e.author); b.writeUtf(e.version);
+            b.writeVarInt(e.sx); b.writeVarInt(e.sy); b.writeVarInt(e.sz); b.writeVarInt(e.blocks); b.writeVarInt(e.machines); b.writeVarInt(e.materials); b.writeVarInt(e.warnings);
+            b.writeUtf(e.features);
+        }
+        static BpEntry read(RegistryFriendlyByteBuf b) {
+            return new BpEntry(b.readUtf(), b.readBoolean(), b.readBoolean(), b.readUtf(), b.readUtf(), b.readUtf(), b.readUtf(),
+                    b.readVarInt(), b.readVarInt(), b.readVarInt(), b.readVarInt(), b.readVarInt(), b.readVarInt(), b.readVarInt(), b.readUtf());
+        }
+    }
+
+    /**
+     * S→C: 건축물 소환기 상태 (설계도 목록·선택·소환 설정·영역 선택·작업 진행). open 이면 화면을 연다.
+     * settings = {회전 0..3, 반전 0/1, 정책 0..2, 기준점 0/1, X, Y, Z 오프셋, 영역 선택 모드 0/1, 덮어쓰기 권한 0/1}
+     */
+    public record BpList(boolean open, String selected, List<Integer> settings, String selection, String job, float jobFrac,
+                         String message, List<BpEntry> entries) implements CustomPacketPayload {
+        public static final Type<BpList> TYPE = new Type<>(JjkMod.id("bp_list"));
+        public static final StreamCodec<RegistryFriendlyByteBuf, BpList> CODEC = StreamCodec.of((b, v) -> {
+            b.writeBoolean(v.open); b.writeUtf(v.selected);
+            b.writeVarInt(v.settings.size()); for (int i : v.settings) b.writeVarInt(i);
+            b.writeUtf(v.selection); b.writeUtf(v.job); b.writeFloat(v.jobFrac); b.writeUtf(v.message);
+            b.writeVarInt(v.entries.size()); for (BpEntry e : v.entries) BpEntry.write(b, e);
+        }, b -> {
+            boolean open = b.readBoolean(); String sel = b.readUtf();
+            int n = Math.min(b.readVarInt(), 64); List<Integer> st = new java.util.ArrayList<>(n); for (int i = 0; i < n; i++) st.add(b.readVarInt());
+            String selection = b.readUtf(), job = b.readUtf(); float frac = b.readFloat(); String msg = b.readUtf();
+            int m = Math.min(b.readVarInt(), 4096); List<BpEntry> es = new java.util.ArrayList<>(m); for (int i = 0; i < m; i++) es.add(BpEntry.read(b));
+            return new BpList(open, sel, st, selection, job, frac, msg, es);
+        });
+        @Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
+    }
+
+    /** S→C: 설계도 상세 — 미리보기 격자 2개({w, h, ARGB...} 위/앞에서 본 모습), 재료 목록("번역키\t개수" 줄), 경고·검사 결과. */
+    public record BpDetail(String id, int[] top, int[] side, String materials, String info) implements CustomPacketPayload {
+        public static final Type<BpDetail> TYPE = new Type<>(JjkMod.id("bp_detail"));
+        public static final StreamCodec<RegistryFriendlyByteBuf, BpDetail> CODEC = StreamCodec.of((b, v) -> {
+            b.writeUtf(v.id); b.writeVarIntArray(v.top); b.writeVarIntArray(v.side); b.writeUtf(v.materials); b.writeUtf(v.info);
+        }, b -> new BpDetail(b.readUtf(), b.readVarIntArray(4096), b.readVarIntArray(4096), b.readUtf(), b.readUtf()));
+        @Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
+    }
 }

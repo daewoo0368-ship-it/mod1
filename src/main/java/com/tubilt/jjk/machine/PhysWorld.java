@@ -10,6 +10,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.TickEvent;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +30,8 @@ public final class PhysWorld {
 
     static final class W { final Sim sim = new Sim(); final Map<Long, MachineBE> bes = new HashMap<>(); int tick; }
     static final Map<ServerLevel, W> WORLDS = new WeakHashMap<>();
+    /** 설계도 배치 중인 기계 위치: 건축물이 다 놓이고 블록 엔티티 데이터가 복원될 때까지 시뮬레이션 등록을 미룬다. */
+    static final Map<ServerLevel, Set<Long>> DEFERRED = new WeakHashMap<>();
 
     public static void init() {
         TickEvent.ServerTickEvent.Post.BUS.addListener(e -> tickAll());
@@ -35,6 +40,8 @@ public final class PhysWorld {
     // ───────────── 등록 / 해제 ─────────────
     static void register(MachineBE be) {
         ServerLevel lvl = (ServerLevel) be.getLevel();
+        Set<Long> held = DEFERRED.get(lvl);
+        if (held != null && held.contains(be.getBlockPos().asLong())) return;
         W w = WORLDS.computeIfAbsent(lvl, k -> new W());
         long key = be.getBlockPos().asLong();
         MachineBE old = w.bes.put(key, be);
@@ -73,6 +80,47 @@ public final class PhysWorld {
         var l = com.tubilt.jjk.sim.GridRules.link(a.part.ports().get(0), b.part.ports().get(0),
                 xa.ordinal(), xb.ordinal(), d.getAxis().ordinal(), ba.teeth(), bb.teeth());
         if (l != null) w.sim.link(l);
+    }
+
+    // ───────────── 설계도 배치 연동 ─────────────
+    /** 이 위치의 기계는 {@link #release} 전까지 네트워크에 넣지 않는다. */
+    public static void defer(ServerLevel lvl, BlockPos pos) {
+        DEFERRED.computeIfAbsent(lvl, k -> new HashSet<>()).add(pos.asLong());
+    }
+
+    /**
+     * 보류를 풀고 기계를 등록한다 → 이웃 탐색·링크(커플링/기어 맞물림) → 다음 틱 솔버가 네트워크·기어비를 다시 계산.
+     * 이미 등록된 기계는 건드리지 않는다(재시작 후 재개 등에서 여러 번 불러도 안전).
+     */
+    public static int release(ServerLevel lvl, Collection<BlockPos> positions) {
+        Set<Long> held = DEFERRED.get(lvl);
+        if (held != null) {
+            for (BlockPos p : positions) held.remove(p.asLong());
+            if (held.isEmpty()) DEFERRED.remove(lvl);
+        }
+        int n = 0;
+        for (BlockPos p : positions) {
+            if (lvl.isLoaded(p) && lvl.getBlockEntity(p) instanceof MachineBE be && !be.isRemoved()) { register(be); n++; }
+        }
+        return n;
+    }
+
+    /** 위치 목록에 있는 기계들의 네트워크 상태. */
+    public record Stats(int machines, int registered, int nets, int jammed, double maxRpm) {}
+
+    public static Stats stats(ServerLevel lvl, Collection<BlockPos> positions) {
+        int machines = 0, reg = 0, jam = 0; double max = 0;
+        Set<com.tubilt.jjk.sim.Net> nets = new HashSet<>();
+        for (BlockPos p : positions) {
+            if (!(lvl.getBlockEntity(p) instanceof MachineBE be)) continue;
+            machines++;
+            if (be.part == null) continue;
+            reg++;
+            com.tubilt.jjk.sim.Net n = be.part.net();
+            if (n != null && nets.add(n) && n.jammed) jam++;
+            max = Math.max(max, Math.abs(be.part.omega) * 60 / (2 * Math.PI));
+        }
+        return new Stats(machines, reg, nets.size(), jam, max);
     }
 
     // ───────────── 틱 ─────────────

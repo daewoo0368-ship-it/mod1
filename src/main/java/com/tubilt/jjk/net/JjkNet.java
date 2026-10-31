@@ -32,12 +32,15 @@ public final class JjkNet {
     public static Consumer<Payloads.Planet> onPlanet = p -> {};
     public static Consumer<Payloads.Meta> onMeta = p -> {};
     public static Consumer<Payloads.Unlocks> onUnlocks = p -> {};
+    public static Consumer<Payloads.BpList> onBpList = p -> {};
+    public static Consumer<Payloads.BpDetail> onBpDetail = p -> {};
 
     public static void init() {
         PayloadProtocol<RegistryFriendlyByteBuf, CustomPacketPayload> proto =
-                ChannelBuilder.named(JjkMod.id("main")).networkProtocolVersion(1).optional().payloadChannel().play();
+                ChannelBuilder.named(JjkMod.id("main")).networkProtocolVersion(2).optional().payloadChannel().play();
 
         proto.serverbound()
+                .add(Payloads.BpReq.TYPE, Payloads.BpReq.CODEC, (p, ctx) -> server(ctx, sp -> com.tubilt.jjk.blueprint.StructureSpawner.handle(sp, p.op(), p.id(), p.text())))
                 .add(Payloads.Hello.TYPE, Payloads.Hello.CODEC, (p, ctx) -> server(ctx, sp -> sp.addTag("gojo.modhud")))
                 .add(Payloads.Cast.TYPE, Payloads.Cast.CODEC, (p, ctx) -> server(ctx, sp -> {
                     Techniques.Tech t = Techniques.byId(p.tech());
@@ -64,7 +67,9 @@ public final class JjkNet {
                 .add(Payloads.Screen.TYPE, Payloads.Screen.CODEC, (p, ctx) -> client(ctx, () -> onScreen.accept(p)))
                 .add(Payloads.Planet.TYPE, Payloads.Planet.CODEC, (p, ctx) -> client(ctx, () -> onPlanet.accept(p)))
                 .add(Payloads.Meta.TYPE, Payloads.Meta.CODEC, (p, ctx) -> client(ctx, () -> onMeta.accept(p)))
-                .add(Payloads.Unlocks.TYPE, Payloads.Unlocks.CODEC, (p, ctx) -> client(ctx, () -> onUnlocks.accept(p)));
+                .add(Payloads.Unlocks.TYPE, Payloads.Unlocks.CODEC, (p, ctx) -> client(ctx, () -> onUnlocks.accept(p)))
+                .add(Payloads.BpList.TYPE, Payloads.BpList.CODEC, (p, ctx) -> client(ctx, () -> onBpList.accept(p)))
+                .add(Payloads.BpDetail.TYPE, Payloads.BpDetail.CODEC, (p, ctx) -> client(ctx, () -> onBpDetail.accept(p)));
 
         CHANNEL = proto.bidirectional().build();
     }
