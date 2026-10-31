@@ -71,7 +71,10 @@ final class CaptureJob {
                 BlockEntity be = level.getBlockEntity(p);
                 if (be != null) {
                     try {
-                        CompoundTag clean = BlueprintFilter.sanitize(be.saveWithId(level.registryAccess()), warnings);
+                        CompoundTag raw = be.saveWithoutMetadata(level.registryAccess());
+                        var type = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
+                        if (type != null) raw.putString("id", type.toString());
+                        CompoundTag clean = BlueprintFilter.sanitize(raw, warnings);
                         if (clean != null) bes.put(idx, clean);
                     } catch (RuntimeException e) {
                         BlueprintFilter.warn(warnings, "블록 엔티티 저장 실패: " + key);

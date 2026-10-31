@@ -18,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
@@ -94,7 +93,7 @@ public final class StructureSpawner {
         PState s = st(sp);
         if (sp.isShiftKeyDown()) { send(sp, true, ""); return; }
         if (s.selectMode) {
-            if (pos == null) { sp.displayClientMessage(Component.literal("§e영역 선택 모드 §7— 블록을 우클릭해 모서리를 지정하세요 (웅크리고 우클릭: 관리 화면)"), true); return; }
+            if (pos == null) { say(sp, Component.literal("§e영역 선택 모드 §7— 블록을 우클릭해 모서리를 지정하세요 (웅크리고 우클릭: 관리 화면)"), true); return; }
             corner(sp, s, pos);
             return;
         }
@@ -103,17 +102,17 @@ public final class StructureSpawner {
     }
 
     static void deny(ServerPlayer sp) {
-        sp.displayClientMessage(Component.literal("§c건축물 소환기는 개발자 전용입니다 §7(OP 레벨 2 이상 또는 태그 jjk.blueprint 필요)"), true);
+        say(sp, Component.literal("§c건축물 소환기는 개발자 전용입니다 §7(OP 레벨 2 이상 또는 태그 jjk.blueprint 필요)"), true);
     }
 
     static void corner(ServerPlayer sp, PState s, BlockPos pos) {
         if (s.selLevel != sp.level()) { s.p1 = null; s.p2 = null; s.nextSecond = false; }
         s.selLevel = (ServerLevel) sp.level();
-        if (!s.nextSecond || s.p1 == null) { s.p1 = pos.immutable(); s.p2 = null; s.nextSecond = true; sp.displayClientMessage(Component.literal("§a시작점 §f" + pos.toShortString() + " §7— 끝점을 우클릭하세요"), false); }
+        if (!s.nextSecond || s.p1 == null) { s.p1 = pos.immutable(); s.p2 = null; s.nextSecond = true; say(sp, Component.literal("§a시작점 §f" + pos.toShortString() + " §7— 끝점을 우클릭하세요"), false); }
         else {
             s.p2 = pos.immutable(); s.nextSecond = false;
             String err = BpPlan.regionError(s.p1.getX(), s.p1.getY(), s.p1.getZ(), s.p2.getX(), s.p2.getY(), s.p2.getZ());
-            sp.displayClientMessage(Component.literal("§a끝점 §f" + pos.toShortString() + " §7— " + selectionText(s) + (err == null ? " · 관리 화면에서 저장" : " · §c" + err)), false);
+            say(sp, Component.literal("§a끝점 §f" + pos.toShortString() + " §7— " + selectionText(s) + (err == null ? " · 관리 화면에서 저장" : " · §c" + err)), false);
         }
     }
 
@@ -291,7 +290,7 @@ public final class StructureSpawner {
         BlueprintJobs.PREVIEWS.removeIf(p -> p.level() == j.level && p.min().equals(j.min) && p.max().equals(j.max));
         BlueprintJobs.PREVIEWS.add(new BlueprintJobs.Preview(j.level, j.min, j.max, conflicts, new int[]{120}));
         String m = "미리보기 " + j.min.toShortString() + " ~ " + j.max.toShortString() + " · " + j.tf.label() + " · " + j.policy.label + " — " + verdict;
-        sp.displayClientMessage(Component.literal(m), false);
+        say(sp, Component.literal(m), false);
         return m;
     }
 
@@ -312,12 +311,15 @@ public final class StructureSpawner {
     }
 
     static String reply(ServerPlayer sp, String m) {
-        for (String line : m.split("\n")) sp.displayClientMessage(Component.literal(line), false);
+        for (String line : m.split("\n")) say(sp, Component.literal(line), false);
         return m;
     }
 
     // ───────────── 클라이언트로 보내기 ─────────────
-    static boolean real(ServerPlayer p) { return !(p instanceof FakePlayer) && p.connection != null; }
+    /** 실제로 접속한 플레이어인지 (자체 검증용 연결 없는 플레이어는 메시지·패킷을 건너뜀). */
+    static boolean real(ServerPlayer p) { return p.connection != null; }
+
+    static void say(ServerPlayer p, Component c, boolean actionBar) { if (real(p)) p.displayClientMessage(c, actionBar); }
 
     public static void refresh(UUID id) {
         ServerPlayer p = BlueprintJobs.player(id);

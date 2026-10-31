@@ -20,8 +20,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HopperBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraftforge.event.TickEvent;
 
 import java.nio.charset.StandardCharsets;
@@ -279,7 +277,10 @@ final class BlueprintSelfTest {
             check("안전 배치: 기존 건축물 위 → 거부, 아무것도 놓지 않음", s.cancelled && s.placed == 0 && s.result.contains("거부"), s.result.replaceAll("§.", ""));
             check("빈 공간만: 일부만 배치하고 나머지 건너뜀", a.placed > 0 && a.skipped > 0, "놓음 " + a.placed + " 건너뜀 " + a.skipped);
 
-            FakePlayer fp = FakePlayerFactory.getMinecraft(lvl);
+            // 접속 연결이 없는 서버 플레이어 (OP 아님) — 패킷 처리기와 같은 StructureSpawner.handle 경로로 요청
+            net.minecraft.server.level.ServerPlayer fp = new net.minecraft.server.level.ServerPlayer(server, lvl,
+                    new com.mojang.authlib.GameProfile(java.util.UUID.fromString("00000000-0000-0000-0000-00000000b10e"), "bp_selftest"),
+                    net.minecraft.server.level.ClientInformation.createDefault());
             fp.removeTag("jjk.blueprint"); fp.removeTag("jjk.blueprint.admin");
             fp.setPos(300.5, Y, 100.5);
             StructureSpawner.STATES.remove(fp.getUUID());
@@ -300,7 +301,7 @@ final class BlueprintSelfTest {
             StructureSpawner.handle(fp, StructureSpawner.OP_RENAME, "jjk:test_power_room", "해킹");
             check("고정 설계도는 이름 변경 불가", fixed("jjk:test_power_room").name.equals("시험용 동력실"), "");
             fp.removeTag("jjk.blueprint"); fp.removeTag("jjk.blueprint.admin");
-            ctx.put("over", place(b, 0, false, rooms().get(0).origin, BpPlan.Policy.OVERWRITE));
+            ctx.put("over", place(fixed("jjk:test_power_room"), 0, false, rooms().get(0).origin, BpPlan.Policy.OVERWRITE));
         });
         until("가짜 플레이어 소환·덮어쓰기 완료", 600, () -> (ctx.get("fake") == null || done((PlaceJob) ctx.get("fake"))) && done((PlaceJob) ctx.get("over")));
         step(() -> {
