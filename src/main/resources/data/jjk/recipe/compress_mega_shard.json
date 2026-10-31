@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:sword_apex"
+ },
+ "result": {
+  "id": "jjk:mega_shard",
+  "count": 1
+ }
+}

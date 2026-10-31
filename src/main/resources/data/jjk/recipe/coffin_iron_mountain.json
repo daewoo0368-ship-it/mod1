@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:maximum_meteor",
+  "minecraft:lava_bucket",
+  "minecraft:obsidian",
+  "minecraft:obsidian",
+  "minecraft:blaze_rod"
+ ],
+ "result": {
+  "id": "jjk:coffin_iron_mountain",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「개관철위산」",
+    "color": "gold",
+    "italic": false
+   }
+  }
+ }
+}

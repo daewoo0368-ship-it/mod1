@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:consume_item", "conditions": {"item": {"items": "jjk:purify_orb"}}}}, "rewards": {"function": "gojo:finger/purify"}}

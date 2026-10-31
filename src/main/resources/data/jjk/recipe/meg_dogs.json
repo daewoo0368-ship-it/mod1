@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:bone",
+  "minecraft:white_dye",
+  "minecraft:black_dye"
+ ],
+ "result": {
+  "id": "jjk:meg_dogs",
+  "count": 1
+ }
+}

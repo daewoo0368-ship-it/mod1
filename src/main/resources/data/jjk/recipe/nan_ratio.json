@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:golden_sword",
+  "minecraft:clock",
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "jjk:nan_ratio",
+  "count": 1
+ }
+}

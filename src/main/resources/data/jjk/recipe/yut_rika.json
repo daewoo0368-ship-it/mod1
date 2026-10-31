@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:nether_star",
+  "minecraft:white_dye",
+  "minecraft:diamond"
+ ],
+ "result": {
+  "id": "jjk:yut_rika",
+  "count": 1
+ }
+}

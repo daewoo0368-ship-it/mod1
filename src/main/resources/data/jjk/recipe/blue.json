@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " P ",
+  "PLP",
+  " P "
+ ],
+ "key": {
+  "P": "minecraft:ender_pearl",
+  "L": "minecraft:lapis_block"
+ },
+ "result": {
+  "id": "jjk:blue",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "술식순전 「창」",
+    "color": "aqua",
+    "italic": false
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "jjk:code"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "jjk:code"
+   }
+  ]
+ }
+}

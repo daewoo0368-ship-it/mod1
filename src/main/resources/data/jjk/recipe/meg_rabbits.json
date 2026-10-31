@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:rabbit_foot",
+  "minecraft:white_wool",
+  "minecraft:ender_pearl"
+ ],
+ "result": {
+  "id": "jjk:meg_rabbits",
+  "count": 1
+ }
+}

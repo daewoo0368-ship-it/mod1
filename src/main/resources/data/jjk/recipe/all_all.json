@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:dev_code",
+  "jjk:gojo_code",
+  "jjk:jammin_code",
+  "jjk:sukuna_code",
+  "jjk:robot_code",
+  "jjk:hacker_code",
+  "jjk:dimension_code",
+  "jjk:worldview_code",
+  "jjk:ugh_code"
+ ],
+ "result": {
+  "id": "jjk:all_all",
+  "count": 1,
+  "components": {
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

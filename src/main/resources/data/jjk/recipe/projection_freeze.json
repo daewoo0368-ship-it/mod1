@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:clock",
+  "minecraft:packed_ice"
+ ],
+ "result": {
+  "id": "jjk:projection_freeze",
+  "count": 1
+ }
+}

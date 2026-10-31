@@ -1,0 +1,3 @@
+summon minecraft:mannequin ~ ~ ~ {Tags:["gojo.csga","gojo.csactor"],hide_description:1b,NoGravity:1b,CustomName:{"text":"고죠 사토루","color":"aqua"},CustomNameVisible:0b,Invulnerable:1b,equipment:{chest:{id:"minecraft:leather_chestplate",components:{"minecraft:dyed_color":1909560}},legs:{id:"minecraft:leather_leggings",components:{"minecraft:dyed_color":1909560}},feet:{id:"minecraft:leather_boots",components:{"minecraft:dyed_color":1315860}}}}
+execute as @a[tag=gojo.csg,limit=1] run data modify entity @e[type=mannequin,tag=gojo.csga,limit=1] profile set value {id:[I;0,0,0,0]}
+execute as @a[tag=gojo.csg,limit=1] run data modify entity @e[type=mannequin,tag=gojo.csga,limit=1] profile.id set from entity @s UUID

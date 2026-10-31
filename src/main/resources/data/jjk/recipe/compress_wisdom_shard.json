@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:mega_block"
+ },
+ "result": {
+  "id": "jjk:wisdom_shard",
+  "count": 1
+ }
+}

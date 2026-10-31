@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:illager_key",
+  "jjk:machine_part"
+ ],
+ "result": {
+  "id": "jjk:doctor_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "박사의 열쇠",
+    "color": "aqua",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

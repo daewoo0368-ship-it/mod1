@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "jjk:six_eyes",
+  "minecraft:black_wool",
+  "minecraft:black_wool",
+  "minecraft:black_wool"
+ ],
+ "result": {
+  "id": "jjk:gojo_blindfold",
+  "count": 1
+ }
+}

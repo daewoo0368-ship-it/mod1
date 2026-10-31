@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:projection_frame",
+  "jjk:projection_slice",
+  "jjk:projection_freeze",
+  "minecraft:nether_star"
+ ],
+ "result": {
+  "id": "jjk:projection_rush",
+  "count": 1
+ }
+}

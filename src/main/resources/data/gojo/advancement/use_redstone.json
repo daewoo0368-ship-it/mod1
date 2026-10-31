@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": "minecraft:redstone"}}}}, "rewards": {"function": "gojo:use/redstone"}}

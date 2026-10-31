@@ -1,0 +1,1 @@
+give @s jjk:dev_token_final[minecraft:item_model="jjk:dev_token_final",minecraft:custom_name={"text":"개발자의 최종토큰","color":"#FFD84A","bold":true,"italic":false},minecraft:lore=[{"text":"개발자의 매우 귀여운 탑승물","color":"aqua","italic":true}]] 1

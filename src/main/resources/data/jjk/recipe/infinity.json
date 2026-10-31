@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GMG",
+  "MDM",
+  "GMG"
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "M": "minecraft:phantom_membrane",
+  "D": "minecraft:diamond"
+ },
+ "result": {
+  "id": "jjk:infinity",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "무하한",
+    "color": "aqua",
+    "italic": false
+   }
+  }
+ }
+}

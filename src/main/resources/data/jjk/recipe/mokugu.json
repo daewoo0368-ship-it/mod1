@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:oak_log",
+  "minecraft:moss_block",
+  "minecraft:bone_meal",
+  "minecraft:bone_meal",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "jjk:mokugu",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "「목구」",
+    "color": "dark_green",
+    "italic": false
+   }
+  }
+ }
+}

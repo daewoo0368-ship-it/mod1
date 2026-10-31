@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:iron_sword",
+  "minecraft:flint",
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "jjk:nan_cleave",
+  "count": 1
+ }
+}

@@ -1,0 +1,1 @@
+give @s jjk:dev_machine_token[minecraft:item_model="jjk:dev_machine_token",minecraft:custom_name={"text":"개발자의 기계 토큰","color":"#FF4040","bold":true,"italic":false},minecraft:enchantment_glint_override=true,minecraft:max_stack_size=1,minecraft:lore=[{"text":"지금까지의 모든 기계를 응축한 것","color":"gray","italic":true},{"text":"우클릭: 개발자의 기계 소환·탑승·귀환","color":"aqua","italic":false}]] 1

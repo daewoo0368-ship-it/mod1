@@ -1,0 +1,2 @@
+$execute positioned as @e[type=marker,tag=gojo.cs,limit=1] rotated as @e[type=marker,tag=gojo.cs,limit=1] positioned ^$(lx) ^$(ly) ^$(lz) run tp @e[type=marker,tag=gojo.cslook] ~ ~ ~
+$execute positioned as @e[type=marker,tag=gojo.cs,limit=1] rotated as @e[type=marker,tag=gojo.cs,limit=1] positioned ^$(cx) ^$(cy) ^$(cz) facing entity @e[type=marker,tag=gojo.cslook,limit=1] feet run tp @e[type=item_display,tag=gojo.cscam,limit=1] ~ ~ ~ ~ ~

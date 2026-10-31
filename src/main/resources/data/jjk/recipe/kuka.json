@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:pink_tulip",
+  "minecraft:peony",
+  "minecraft:rose_bush",
+  "minecraft:lilac",
+  "minecraft:spore_blossom"
+ ],
+ "result": {
+  "id": "jjk:kuka",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "「공화」",
+    "color": "light_purple",
+    "italic": false
+   }
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "nGn",
+  "GTG",
+  "nGn"
+ ],
+ "key": {
+  "G": "minecraft:gold_ingot",
+  "n": "minecraft:gold_nugget",
+  "T": "minecraft:tripwire_hook"
+ },
+ "result": {
+  "id": "jjk:golden_clasp",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {"text": "황금 걸쇠", "color": "gold", "bold": true, "italic": false},
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

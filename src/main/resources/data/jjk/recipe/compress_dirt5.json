@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:dirt4"
+ },
+ "result": {
+  "id": "jjk:dirt5",
+  "count": 1
+ }
+}

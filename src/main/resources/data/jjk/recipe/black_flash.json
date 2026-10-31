@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "OBO",
+  "BNB",
+  "OBO"
+ ],
+ "key": {
+  "O": "minecraft:obsidian",
+  "B": "minecraft:blaze_rod",
+  "N": "minecraft:netherite_scrap"
+ },
+ "result": {
+  "id": "jjk:black_flash",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "흑섬",
+    "color": "dark_red",
+    "italic": false
+   }
+  }
+ }
+}

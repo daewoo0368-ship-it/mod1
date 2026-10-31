@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:player_hurt_entity", "conditions": {"player": [{"condition": "minecraft:entity_properties", "entity": "this", "predicate": {"equipment": {"mainhand": {"items": ["jjk:exec_sword"], "predicates": {"minecraft:custom_data": "{gojo_exec:1b}"}}}}}]}}}, "rewards": {"function": "gojo:use/exec"}}

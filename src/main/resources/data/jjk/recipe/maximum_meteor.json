@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "MMM",
+  "MFM",
+  "MMM"
+ ],
+ "key": {
+  "M": "minecraft:magma_block",
+  "F": "minecraft:fire_charge"
+ },
+ "result": {
+  "id": "jjk:maximum_meteor",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "극번 「운」",
+    "color": "red",
+    "italic": false
+   }
+  }
+ }
+}

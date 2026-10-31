@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WPW",
+  "PHP",
+  "WPW"
+ ],
+ "key": {
+  "W": "minecraft:water_bucket",
+  "P": "minecraft:prismarine",
+  "H": "minecraft:nautilus_shell"
+ },
+ "result": {
+  "id": "jjk:taikokai",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「타이코카이」",
+    "color": "dark_green",
+    "italic": false
+   }
+  }
+ }
+}

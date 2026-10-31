@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:redstone_block",
+  "minecraft:fire_charge",
+  "minecraft:ghast_tear"
+ ],
+ "result": {
+  "id": "jjk:blood_nova",
+  "count": 1
+ }
+}

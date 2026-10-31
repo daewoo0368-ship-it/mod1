@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "jjk:mech_shaft"
+ },
+ "pattern": [
+  "III",
+  "ISI",
+  "III"
+ ],
+ "result": {
+  "id": "jjk:mech_flywheel",
+  "count": 1
+ }
+}

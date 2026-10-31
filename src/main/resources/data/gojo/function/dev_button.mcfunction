@@ -1,0 +1,1 @@
+give @s jjk:dev_button[minecraft:item_model="jjk:dev_button",minecraft:custom_name={"text":"개발자의 버튼","color":"red","bold":true,"italic":false},minecraft:lore=[{"text":"절대 누르지 마시오","color":"dark_red","italic":true},{"text":"우클릭: 바라보는 곳을 지름 100블럭 삭제","color":"gray","italic":false}],minecraft:enchantment_glint_override=true,minecraft:rarity="epic"] 1

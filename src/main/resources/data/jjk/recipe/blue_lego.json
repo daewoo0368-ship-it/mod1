@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CCC",
+  "CCC"
+ ],
+ "key": {
+  "C": "minecraft:blue_concrete"
+ },
+ "result": {
+  "id": "jjk:blue_lego",
+  "count": 1
+ }
+}

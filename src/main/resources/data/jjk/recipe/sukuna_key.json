@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:binding",
+  "jjk:myeong_key",
+  "jjk:binding"
+ ],
+ "result": {
+  "id": "jjk:sukuna_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "스쿠나 열쇠",
+    "color": "dark_red",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

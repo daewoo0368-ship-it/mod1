@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "jjk:dirt12"
+ ],
+ "result": {
+  "id": "jjk:dirt11",
+  "count": 9
+ }
+}

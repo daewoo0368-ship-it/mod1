@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:red_concrete",
+  "jjk:hell_key"
+ ],
+ "result": {
+  "id": "jjk:myeong_key",
+  "count": 1
+ }
+}

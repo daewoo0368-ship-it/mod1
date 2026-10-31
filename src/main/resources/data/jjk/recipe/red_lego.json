@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CCC",
+  "CCC"
+ ],
+ "key": {
+  "C": "minecraft:red_concrete"
+ },
+ "result": {
+  "id": "jjk:red_lego",
+  "count": 1
+ }
+}

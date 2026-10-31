@@ -1,0 +1,15 @@
+fx3d 텍스처 출처
+planet.png      — NASA Scientific Visualization Studio, CGI Moon Kit (LRO LROC 색상 모자이크 + LOLA 고도) 를 재채색·음영 처리. 공공 저작물(Public Domain).
+                  https://svs.gsfc.nasa.gov/4720
+space.png       — ESO/S. Brunier, The Milky Way panorama (eso0932a), CC BY 4.0. 크기 조정·밝기 보정.
+                  https://www.eso.org/public/images/eso0932a/
+planet_lava.png — 절차적 생성 (이 모드).
+white.png       — 이 모드.
+
+── v0.30 행성 셰이더용 (시플 'ultralaser' 모드 MIT 배포본에서 재표본화된 NASA/ESO 원본 이미지)
+earth_day.png    — NASA Earth Observatory, Blue Marble: Next Generation (2004), Reto Stockli. Public Domain.
+                   https://visibleearth.nasa.gov/images/73909
+earth_aux.png    — R: NASA Black Marble 2016 (Suomi NPP VIIRS) / G: NASA GSFC Blue Marble clouds / B: 바다 마스크. Public Domain.
+planet_albedo.png, planet_relief.png
+                 — NASA SVS CGI Moon Kit (LRO LROC 색상 모자이크, LOLA 고도). Public Domain. https://svs.gsfc.nasa.gov/4720
+셰이더 기법(릴리프 법선, 2μ0/(μ0+μ) 조명, 보로노이 균열, 열 대류, 사슬 광선)은 Seafle 'ultralaser'(MIT) 셰이더를 참고해 새로 작성.

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:super_block"
+ ],
+ "result": {
+  "id": "jjk:wisdom_block",
+  "count": 9
+ }
+}

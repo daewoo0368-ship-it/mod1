@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:legend"
+ },
+ "result": {
+  "id": "jjk:dev_ingot",
+  "count": 1
+ }
+}

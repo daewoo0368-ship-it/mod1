@@ -1,0 +1,1 @@
+give @s jjk:dev_token[minecraft:item_model="jjk:dev_token",minecraft:custom_name="개발자의 토큰",minecraft:enchantment_glint_override=true,minecraft:lore=[{"text":"회옥 · 옥절","color":"gray","italic":true}]] 1

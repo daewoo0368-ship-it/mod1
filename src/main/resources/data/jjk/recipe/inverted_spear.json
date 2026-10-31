@@ -1,0 +1,62 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CAC",
+  "ATA",
+  "CAC"
+ ],
+ "key": {
+  "C": "minecraft:chain",
+  "A": "minecraft:amethyst_shard",
+  "T": "minecraft:trident"
+ },
+ "result": {
+  "id": "jjk:inverted_spear",
+  "count": 1,
+  "components": {
+   "minecraft:custom_data": {
+    "gojo_ten": true
+   },
+   "minecraft:item_model": "jjk:inverted_spear",
+   "minecraft:item_name": {
+    "text": "천역모(天逆鉾)",
+    "color": "dark_purple",
+    "italic": false
+   },
+   "minecraft:lore": [
+    {
+     "text": "닿은 술식을 강제로 해제한다",
+     "color": "gray",
+     "italic": false
+    },
+    {
+     "text": "무하한을 꿰뚫는다",
+     "color": "gray",
+     "italic": false
+    }
+   ],
+   "minecraft:enchantments": {
+    "minecraft:loyalty": 3
+   },
+   "minecraft:enchantment_glint_override": false,
+   "minecraft:attribute_modifiers": [
+    {
+     "type": "minecraft:attack_damage",
+     "id": "gojo:ten",
+     "amount": 11.0,
+     "operation": "add_value",
+     "slot": "mainhand"
+    },
+    {
+     "type": "minecraft:attack_speed",
+     "id": "gojo:ten_s",
+     "amount": -2.6,
+     "operation": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "minecraft:unbreakable": {}
+  }
+ }
+}

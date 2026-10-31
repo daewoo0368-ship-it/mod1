@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:golden_clasp",
+  "jjk:sun_stone",
+  "jjk:curse"
+ ],
+ "result": {
+  "id": "jjk:kralu_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "크랄루의 열쇠",
+    "color": "gold",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

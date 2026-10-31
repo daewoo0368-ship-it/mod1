@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "OEO",
+  "ECE",
+  "OEO"
+ ],
+ "key": {
+  "O": "minecraft:crying_obsidian",
+  "E": "minecraft:echo_shard",
+  "C": "minecraft:ender_chest"
+ },
+ "result": {
+  "id": "jjk:prison_realm",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "옥문강",
+    "color": "dark_red",
+    "italic": false
+   }
+  }
+ }
+}

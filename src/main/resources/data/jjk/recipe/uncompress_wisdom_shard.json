@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:wisdom_shard"
+ ],
+ "result": {
+  "id": "jjk:mega_block",
+  "count": 9
+ }
+}

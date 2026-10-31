@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:iron_nugget",
+  "minecraft:flint",
+  "minecraft:copper_ingot"
+ ],
+ "result": {
+  "id": "jjk:nob_nail",
+  "count": 1
+ }
+}

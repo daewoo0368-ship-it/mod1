@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "EOE",
+  "OIO",
+  "EOE"
+ ],
+ "key": {
+  "E": "minecraft:ender_eye",
+  "O": "minecraft:crying_obsidian",
+  "I": "jjk:infinity"
+ },
+ "result": {
+  "id": "jjk:unlimited_void",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「무량공처」",
+    "color": "white",
+    "italic": false
+   }
+  }
+ }
+}

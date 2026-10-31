@@ -1,0 +1,23 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:rotten_flesh",
+  "minecraft:rotten_flesh",
+  "minecraft:rotten_flesh",
+  "minecraft:rotten_flesh",
+  "minecraft:ghast_tear",
+  "minecraft:soul_sand"
+ ],
+ "result": {
+  "id": "jjk:idle_transfiguration",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "무위전변",
+    "color": "dark_aqua",
+    "italic": false
+   }
+  }
+ }
+}

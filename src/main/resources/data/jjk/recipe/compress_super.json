@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:wisdom"
+ },
+ "result": {
+  "id": "jjk:super",
+  "count": 1
+ }
+}

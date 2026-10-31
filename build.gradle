@@ -1,0 +1,59 @@
+// 포지 공식 MDK(1.21.10, ForgeGradle 7) 구조 기반
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+}
+
+version = mod_version
+group = maven_group
+base { archivesName = archives_base_name }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+
+    runs {
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+        }
+        register('client')
+        register('server') { args '--nogui' }
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    maven { name = 'GeckoLib'; url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+    implementation "software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}"
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def props = [mod_id: mod_id, mod_version: mod_version, geckolib_version: geckolib_version]
+    inputs.properties props
+    filesMatching('META-INF/mods.toml') { expand props }
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+// 믹스인 설정 (포지는 jar 매니페스트의 MixinConfigs 로 로드)
+tasks.named('jar', Jar).configure {
+    manifest { attributes('MixinConfigs': 'jjk.mixins.json') }
+}
+
+// 시뮬레이션 코어(Minecraft 비의존) 자체 검증
+tasks.register('simTest', JavaExec) {
+    group = 'verification'
+    classpath = sourceSets.main.output + sourceSets.test.output
+    mainClass = 'com.tubilt.jjk.sim.SimSelfTest'
+    jvmArgs '-Dstdout.encoding=UTF-8'
+}

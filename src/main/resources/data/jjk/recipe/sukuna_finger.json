@@ -1,0 +1,51 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:rotten_flesh",
+  "minecraft:bone",
+  "minecraft:nether_wart",
+  "minecraft:redstone",
+  "minecraft:wither_rose"
+ ],
+ "result": {
+  "id": "jjk:sukuna_finger",
+  "count": 1,
+  "components": {
+   "minecraft:item_model": "jjk:sukuna_finger",
+   "minecraft:item_name": {
+    "text": "료멘 스쿠나의 손가락",
+    "color": "dark_red",
+    "italic": false
+   },
+   "minecraft:lore": [
+    {
+     "text": "특급 주물 — 삼키면 스쿠나의 힘이 깃든다",
+     "color": "gray",
+     "italic": true
+    },
+    {
+     "text": "모두 20개",
+     "color": "dark_gray",
+     "italic": true
+    }
+   ],
+   "minecraft:custom_data": {
+    "jjk_finger": true
+   },
+   "minecraft:rarity": "epic",
+   "minecraft:max_stack_size": 20,
+   "minecraft:consumable": {
+    "consume_seconds": 2.0,
+    "animation": "eat",
+    "sound": "minecraft:entity.generic.eat",
+    "has_consume_particles": true
+   },
+   "minecraft:food": {
+    "nutrition": 0,
+    "saturation": 0.0,
+    "can_always_eat": true
+   }
+  }
+ }
+}

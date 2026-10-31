@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:idle_transfiguration",
+  "minecraft:fermented_spider_eye",
+  "minecraft:ender_eye",
+  "minecraft:soul_lantern"
+ ],
+ "result": {
+  "id": "jjk:self_embodiment",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「자폐원돈과」",
+    "color": "dark_aqua",
+    "italic": false
+   }
+  }
+ }
+}

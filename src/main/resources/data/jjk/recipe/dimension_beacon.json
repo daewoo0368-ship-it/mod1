@@ -1,0 +1,27 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "OEO",
+  "EBE",
+  "OEO"
+ ],
+ "key": {
+  "O": "minecraft:crying_obsidian",
+  "E": "minecraft:ender_eye",
+  "B": "minecraft:beacon"
+ },
+ "result": {
+  "id": "jjk:dimension_beacon",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "차원 신호기",
+    "color": "light_purple",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

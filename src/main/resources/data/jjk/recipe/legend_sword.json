@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "jjk:legend",
+  "jjk:hyung_sword"
+ ],
+ "result": {
+  "id": "jjk:legend_sword",
+  "count": 1
+ }
+}

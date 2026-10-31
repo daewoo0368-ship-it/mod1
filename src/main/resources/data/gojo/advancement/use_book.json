@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:deadly_sentencing"]}}}}, "rewards": {"function": "gojo:use/book"}}

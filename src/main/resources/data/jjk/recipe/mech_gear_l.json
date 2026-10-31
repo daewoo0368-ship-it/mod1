@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "M": "jjk:mech_gear_m"
+ },
+ "pattern": [
+  " I ",
+  "IMI",
+  " I "
+ ],
+ "result": {
+  "id": "jjk:mech_gear_l",
+  "count": 1
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "jjk:block/mech_gear_l"
+  },
+  "axis=y": {
+   "model": "jjk:block/mech_gear_l"
+  },
+  "axis=z": {
+   "model": "jjk:block/mech_gear_l"
+  }
+ }
+}

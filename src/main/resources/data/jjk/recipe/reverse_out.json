@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:reverse_heal",
+  "minecraft:nether_star",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "jjk:reverse_out",
+  "count": 1
+ }
+}

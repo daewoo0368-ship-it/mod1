@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:clock",
+  "minecraft:coal",
+  "minecraft:golden_carrot"
+ ],
+ "result": {
+  "id": "jjk:nan_overtime",
+  "count": 1
+ }
+}

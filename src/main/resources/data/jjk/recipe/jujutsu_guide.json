@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:book",
+  "minecraft:ender_eye",
+  "minecraft:glowstone_dust"
+ ],
+ "result": {
+  "id": "jjk:jujutsu_guide",
+  "count": 1
+ }
+}

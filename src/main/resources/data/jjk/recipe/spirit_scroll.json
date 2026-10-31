@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:soul_sand",
+  "minecraft:ender_eye",
+  "minecraft:bone"
+ ],
+ "result": {
+  "id": "jjk:spirit_scroll",
+  "count": 1
+ }
+}

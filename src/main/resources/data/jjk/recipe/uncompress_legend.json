@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "jjk:legend"
+ ],
+ "result": {
+  "id": "jjk:infinity_block",
+  "count": 9
+ }
+}

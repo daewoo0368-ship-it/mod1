@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:clock",
+  "minecraft:iron_sword"
+ ],
+ "result": {
+  "id": "jjk:projection_slice",
+  "count": 1
+ }
+}

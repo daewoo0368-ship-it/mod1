@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:prison_realm"]}}}}, "rewards": {"function": "gojo:use/echo"}}

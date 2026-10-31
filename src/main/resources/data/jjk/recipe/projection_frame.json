@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:clock",
+  "minecraft:feather"
+ ],
+ "result": {
+  "id": "jjk:projection_frame",
+  "count": 1
+ }
+}

@@ -1,0 +1,16 @@
+name: build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+      - name: 시뮬레이션 코어 테스트 (Minecraft 비의존)
+        run: chmod +x run_simtest.sh && ./run_simtest.sh
+      - name: Forge 빌드 (컴파일)
+        run: chmod +x gradlew && ./gradlew build --no-daemon --stacktrace 2>&1 | tee build.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: build-log-and-jar, path: "build.log\nbuild/libs/*.jar" }

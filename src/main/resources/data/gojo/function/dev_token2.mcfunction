@@ -1,0 +1,1 @@
+give @s jjk:dev_token2[minecraft:item_model="jjk:dev_token2",minecraft:custom_name="개발자의 토큰2",minecraft:enchantment_glint_override=true,minecraft:lore=[{"text":"시부야 사변","color":"gray","italic":true}]] 1

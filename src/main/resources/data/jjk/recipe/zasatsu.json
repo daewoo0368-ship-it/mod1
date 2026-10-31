@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:gold_block",
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:rabbit_foot",
+  "minecraft:jukebox"
+ ],
+ "result": {
+  "id": "jjk:zasatsu",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「좌살박도」",
+    "color": "green",
+    "italic": false
+   }
+  }
+ }
+}

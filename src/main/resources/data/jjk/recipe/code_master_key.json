@@ -1,0 +1,28 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:gojo_key",
+  "jjk:koming_key",
+  "jjk:myeong_key",
+  "jjk:sukuna_key",
+  "jjk:illager_key",
+  "jjk:doctor_key",
+  "jjk:hacker_key",
+  "jjk:donquixote_key",
+  "jjk:kralu_key"
+ ],
+ "result": {
+  "id": "jjk:code_master_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "코드의 대열쇠",
+    "color": "gold",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

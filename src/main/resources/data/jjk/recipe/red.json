@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " B ",
+  "BRB",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:blaze_powder",
+  "R": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "jjk:red",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "술식반전 「혁」",
+    "color": "red",
+    "italic": false
+   }
+  }
+ }
+}

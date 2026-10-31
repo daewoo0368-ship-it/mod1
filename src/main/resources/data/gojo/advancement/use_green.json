@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:taikokai"]}}}}, "rewards": {"function": "gojo:use/green"}}

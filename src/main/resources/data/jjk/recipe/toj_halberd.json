@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:trident",
+  "minecraft:iron_ingot",
+  "minecraft:black_dye"
+ ],
+ "result": {
+  "id": "jjk:toj_halberd",
+  "count": 1
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:dev_code",
+  "minecraft:iron_block",
+  "minecraft:redstone_block",
+  "minecraft:leather"
+ ],
+ "result": {
+  "id": "jjk:dev_glove",
+  "count": 1
+ }
+}

@@ -1,0 +1,1 @@
+give @s jjk:dev_token3[minecraft:item_model="jjk:dev_token3",minecraft:custom_name="개발자 토큰3",minecraft:enchantment_glint_override=true,minecraft:lore=[{"text":"개발자의 귀여운 탑승물","color":"aqua","italic":true}]] 1

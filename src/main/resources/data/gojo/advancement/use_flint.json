@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:unlimited_void"]}}}}, "rewards": {"function": "gojo:use/flint"}}

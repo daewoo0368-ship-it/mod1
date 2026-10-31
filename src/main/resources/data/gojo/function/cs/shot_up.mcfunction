@@ -1,0 +1,1 @@
+execute positioned as @e[type=mannequin,tag=gojo.csga,limit=1] rotated as @e[type=marker,tag=gojo.cs,limit=1] positioned ^-2.2 ^0.2 ^2.2 facing entity @e[type=mannequin,tag=gojo.csga,limit=1] eyes run tp @e[type=item_display,tag=gojo.cscam,limit=1] ~ ~ ~ ~ ~

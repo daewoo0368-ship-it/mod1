@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:book",
+  "jjk:dev_code",
+  "minecraft:redstone"
+ ],
+ "result": {
+  "id": "jjk:dev_weapon_guide",
+  "count": 1
+ }
+}

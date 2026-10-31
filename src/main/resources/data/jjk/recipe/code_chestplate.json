@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "C C",
+  "CCC",
+  "CCC"
+ ],
+ "key": {
+  "C": "jjk:code"
+ },
+ "result": {
+  "id": "jjk:code_chestplate",
+  "count": 1
+ }
+}

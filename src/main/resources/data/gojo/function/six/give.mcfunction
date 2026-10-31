@@ -1,0 +1,1 @@
+give @s jjk:six_eyes[minecraft:custom_data={gojo_rikugan:1b},minecraft:item_model="jjk:six_eyes",minecraft:item_name={"text": "육안(六眼)", "color": "aqua", "italic": false},minecraft:enchantment_glint_override=true,minecraft:lore=[{"text":"지니고만 있어도 발동한다","color":"gray","italic":false}]] 1

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:iron_nugget",
+  "minecraft:redstone",
+  "minecraft:amethyst_shard"
+ ],
+ "result": {
+  "id": "jjk:nob_resonance",
+  "count": 1
+ }
+}

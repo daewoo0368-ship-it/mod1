@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:dev_sword"
+ },
+ "result": {
+  "id": "jjk:sword_apex",
+  "count": 1
+ }
+}

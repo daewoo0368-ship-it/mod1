@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:self_embodiment"]}}}}, "rewards": {"function": "gojo:use/spider_eye"}}

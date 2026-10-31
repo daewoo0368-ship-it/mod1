@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:consume_item", "conditions": {"item": {"items": ["jjk:sukuna_finger"], "predicates": {"minecraft:custom_data": "{jjk_finger:1b}"}}}}}, "rewards": {"function": "gojo:finger/eat"}}

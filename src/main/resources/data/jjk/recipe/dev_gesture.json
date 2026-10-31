@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:dev_code",
+  "minecraft:bone_block",
+  "minecraft:nether_brick",
+  "minecraft:redstone_block"
+ ],
+ "result": {
+  "id": "jjk:dev_gesture",
+  "count": 1
+ }
+}

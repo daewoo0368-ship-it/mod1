@@ -1,0 +1,4 @@
+summon minecraft:mannequin ~ ~ ~ {Tags:["gojo.cst","gojo.csactor"],hide_description:1b,NoGravity:1b,CustomName:{"text":"후시구로 토우지","color":"dark_green"},CustomNameVisible:0b,Invulnerable:1b,equipment:{chest:{id:"minecraft:leather_chestplate",components:{"minecraft:dyed_color":1710618}},legs:{id:"minecraft:leather_leggings",components:{"minecraft:dyed_color":14737632}},feet:{id:"minecraft:leather_boots",components:{"minecraft:dyed_color":1710618}},mainhand:{id:"minecraft:trident"}}}
+execute unless entity @e[tag=gojo.cst] run summon minecraft:husk ~ ~ ~ {Tags:["gojo.cst","gojo.csactor"],NoAI:1b,Silent:1b,Invulnerable:1b,PersistenceRequired:1b,equipment:{mainhand:{id:"minecraft:trident"}}}
+execute as @a[tag=gojo.cstp,limit=1] run data modify entity @e[type=mannequin,tag=gojo.cst,limit=1] profile set value {id:[I;0,0,0,0]}
+execute as @a[tag=gojo.cstp,limit=1] run data modify entity @e[type=mannequin,tag=gojo.cst,limit=1] profile.id set from entity @s UUID

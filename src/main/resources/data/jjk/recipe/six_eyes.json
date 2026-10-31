@@ -1,0 +1,37 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "DPD",
+  "PEP",
+  "DPD"
+ ],
+ "key": {
+  "D": "minecraft:diamond",
+  "P": "minecraft:prismarine_crystals",
+  "E": "minecraft:ender_eye"
+ },
+ "result": {
+  "id": "jjk:six_eyes",
+  "count": 1,
+  "components": {
+   "minecraft:custom_data": {
+    "gojo_rikugan": true
+   },
+   "minecraft:item_model": "jjk:six_eyes",
+   "minecraft:item_name": {
+    "text": "육안(六眼)",
+    "color": "aqua",
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true,
+   "minecraft:lore": [
+    {
+     "text": "지니고만 있어도 발동한다",
+     "color": "gray",
+     "italic": false
+    }
+   ]
+  }
+ }
+}

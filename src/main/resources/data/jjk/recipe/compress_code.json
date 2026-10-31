@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:quantum_block"
+ },
+ "result": {
+  "id": "jjk:code",
+  "count": 1
+ }
+}

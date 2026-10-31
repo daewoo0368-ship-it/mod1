@@ -1,0 +1,27 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CQC",
+  "QGQ",
+  "CQC"
+ ],
+ "key": {
+  "C": "jjk:code",
+  "Q": "jjk:quantum_block",
+  "G": "jjk:golden_clasp"
+ },
+ "result": {
+  "id": "jjk:hacker_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "해커의 열쇠",
+    "color": "green",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

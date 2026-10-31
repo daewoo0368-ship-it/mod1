@@ -1,0 +1,12 @@
+{
+ "replace": false,
+ "values": [
+  "jjk:mech_shaft",
+  "jjk:mech_gear_s",
+  "jjk:mech_gear_m",
+  "jjk:mech_gear_l",
+  "jjk:mech_motor",
+  "jjk:mech_flywheel",
+  "jjk:mech_fan"
+ ]
+}

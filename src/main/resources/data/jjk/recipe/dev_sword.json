@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "X",
+  "X",
+  "S"
+ ],
+ "key": {
+  "X": "jjk:dev_ingot",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "jjk:dev_sword",
+  "count": 1
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:jacob_ladder",
+  "jjk:jacob_climb",
+  "minecraft:nether_star"
+ ],
+ "result": {
+  "id": "jjk:jacob_judge",
+  "count": 1
+ }
+}

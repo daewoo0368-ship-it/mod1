@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:phantom_membrane",
+  "minecraft:ender_eye",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "jjk:hell_key",
+  "count": 1
+ }
+}

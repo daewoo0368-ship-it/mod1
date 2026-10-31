@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:wisdom_block"
+ },
+ "result": {
+  "id": "jjk:super_block",
+  "count": 1
+ }
+}

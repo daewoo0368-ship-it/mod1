@@ -1,0 +1,23 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:red_lego",
+  "jjk:blue_lego",
+  "jjk:yellow_lego",
+  "jjk:hell_key"
+ ],
+ "result": {
+  "id": "jjk:koming_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "코밍의 열쇠",
+    "color": "gold",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

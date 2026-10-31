@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "#B#",
+  "###"
+ ],
+ "key": {
+  "#": "minecraft:black_concrete",
+  "B": "jjk:binding"
+ },
+ "result": {
+  "id": "jjk:curse",
+  "count": 1
+ }
+}

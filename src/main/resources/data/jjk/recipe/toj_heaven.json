@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:leather",
+  "minecraft:iron_ingot",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "jjk:toj_heaven",
+  "count": 1
+ }
+}

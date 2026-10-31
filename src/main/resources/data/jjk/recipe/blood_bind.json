@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:redstone",
+  "minecraft:red_dye",
+  "minecraft:lead"
+ ],
+ "result": {
+  "id": "jjk:blood_bind",
+  "count": 1
+ }
+}

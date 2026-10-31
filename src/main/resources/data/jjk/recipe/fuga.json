@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:bow",
+  "minecraft:fire_charge",
+  "minecraft:fire_charge",
+  "minecraft:fire_charge",
+  "minecraft:arrow"
+ ],
+ "result": {
+  "id": "jjk:fuga",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "「푸가」",
+    "color": "gold",
+    "italic": false
+   }
+  }
+ }
+}

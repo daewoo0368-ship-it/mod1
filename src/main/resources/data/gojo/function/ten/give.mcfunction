@@ -1,0 +1,4 @@
+clear @s *[minecraft:custom_data~{gojo_ten:1b}]
+give @s jjk:inverted_spear[minecraft:custom_data={gojo_ten:1b},minecraft:item_model="jjk:inverted_spear",minecraft:item_name={"text":"천역모(天逆鉾)","color":"dark_purple","italic":false},minecraft:lore=[{"text":"닿은 술식을 강제로 해제한다","color":"gray","italic":false},{"text":"무하한을 꿰뚫는다","color":"gray","italic":false}],minecraft:enchantments={"minecraft:loyalty":3},minecraft:enchantment_glint_override=false,minecraft:attribute_modifiers=[{type:"minecraft:attack_damage",id:"gojo:ten",amount:11.0d,operation:"add_value",slot:"mainhand"},{type:"minecraft:attack_speed",id:"gojo:ten_s",amount:-2.6d,operation:"add_value",slot:"mainhand"}],minecraft:unbreakable={}] 1
+playsound minecraft:item.trident.return master @s ~ ~ ~ 1 0.6
+title @s actionbar {"text":"특급 주구 「천역모」를 꺼냈다","color":"dark_purple"}

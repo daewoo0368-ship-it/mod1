@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ILI",
+  "LAL",
+  "ILI"
+ ],
+ "key": {
+  "I": "minecraft:iron_block",
+  "L": "minecraft:leather",
+  "A": "minecraft:golden_apple"
+ },
+ "result": {
+  "id": "jjk:heavenly_restriction",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "천여주박",
+    "color": "dark_green",
+    "italic": false
+   }
+  }
+ }
+}

@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:dev_token"], "components": {"minecraft:item_name": "개발자의 토큰"}}}}}, "rewards": {"function": "gojo:use/devtoken"}}

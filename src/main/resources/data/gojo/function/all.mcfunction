@@ -1,0 +1,1 @@
+function minecraft:all/all

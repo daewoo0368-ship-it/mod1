@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:feather",
+  "minecraft:leather",
+  "minecraft:sugar"
+ ],
+ "result": {
+  "id": "jjk:toj_dash",
+  "count": 1
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "FSF",
+  " F "
+ ],
+ "key": {
+  "F": "minecraft:flint",
+  "S": "minecraft:diamond_sword"
+ },
+ "result": {
+  "id": "jjk:dismantle",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "「해」 / 세계참",
+    "color": "white",
+    "italic": false
+   }
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "criteria": {
+  "t": {
+   "trigger": "minecraft:tick"
+  }
+ },
+ "rewards": {
+  "recipes": [
+   "jjk:blue",
+   "jjk:red",
+   "jjk:purple",
+   "jjk:black_flash",
+   "jjk:infinity",
+   "jjk:unlimited_void",
+   "jjk:dismantle",
+   "jjk:fuga",
+   "jjk:malevolent_shrine",
+   "jjk:mahoraga",
+   "jjk:idle_transfiguration",
+   "jjk:self_embodiment",
+   "jjk:maximum_meteor",
+   "jjk:coffin_iron_mountain",
+   "jjk:heavenly_restriction",
+   "jjk:prison_realm",
+   "jjk:deadly_sentencing",
+   "jjk:mokugu",
+   "jjk:kuka",
+   "jjk:taikokai",
+   "jjk:zasatsu",
+   "jjk:six_eyes",
+   "jjk:sukuna_finger",
+   "jjk:exec_sword",
+   "jjk:inverted_spear",
+   "jjk:purify_orb"
+  ]
+ }
+}

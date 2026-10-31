@@ -1,0 +1,146 @@
+{
+ "fx.boom": {
+  "sounds": [
+   {
+    "name": "jjk:fx/boom"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.impact": {
+  "sounds": [
+   {
+    "name": "jjk:fx/impact"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.whoosh": {
+  "sounds": [
+   {
+    "name": "jjk:fx/whoosh"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.charge": {
+  "sounds": [
+   {
+    "name": "jjk:fx/charge"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.laser": {
+  "sounds": [
+   {
+    "name": "jjk:fx/laser"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.slash": {
+  "sounds": [
+   {
+    "name": "jjk:fx/slash"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.glitch": {
+  "sounds": [
+   {
+    "name": "jjk:fx/glitch"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.stinger": {
+  "sounds": [
+   {
+    "name": "jjk:fx/stinger"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.plate": {
+  "sounds": [
+   {
+    "name": "jjk:fx/plate"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.shatter": {
+  "sounds": [
+   {
+    "name": "jjk:fx/shatter"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.thunder": {
+  "sounds": [
+   {
+    "name": "jjk:fx/thunder"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.magic": {
+  "sounds": [
+   {
+    "name": "jjk:fx/magic"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.deep": {
+  "sounds": [
+   {
+    "name": "jjk:fx/deep"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.siren": {
+  "sounds": [
+   {
+    "name": "jjk:fx/siren"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.data": {
+  "sounds": [
+   {
+    "name": "jjk:fx/data"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.choir": {
+  "sounds": [
+   {
+    "name": "jjk:fx/choir"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.drum": {
+  "sounds": [
+   {
+    "name": "jjk:fx/drum"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ },
+ "fx.riser": {
+  "sounds": [
+   {
+    "name": "jjk:fx/riser"
+   }
+  ],
+  "subtitle": "subtitles.jjk.fx"
+ }
+}

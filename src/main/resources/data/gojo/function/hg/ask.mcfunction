@@ -1,0 +1,3 @@
+scoreboard players set @s gojo.plead 0
+scoreboard players enable @s gojo.plead
+tellraw @s ["",{"text":"[저지맨] ","color":"dark_gray","bold":true},{"text":"변론하라 (10초): ","color":"gray"},{"text":"[자백]","color":"red","click_event":{"action":"run_command","command":"/trigger gojo.plead set 1"},"hover_event":{"action":"show_text","value":"죄를 인정한다 — 유죄 확정"}},{"text":"  "},{"text":"[묵비]","color":"yellow","click_event":{"action":"run_command","command":"/trigger gojo.plead set 2"},"hover_event":{"action":"show_text","value":"침묵한다 — 유죄 60%"}},{"text":"  "},{"text":"[반론]","color":"green","click_event":{"action":"run_command","command":"/trigger gojo.plead set 3"},"hover_event":{"action":"show_text","value":"무죄를 주장한다 — 유죄 35%"}}]

@@ -1,0 +1,23 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:six_eyes",
+  "minecraft:diamond_block",
+  "minecraft:netherite_ingot",
+  "jjk:golden_clasp"
+ ],
+ "result": {
+  "id": "jjk:gojo_key",
+  "count": 1,
+  "components": {
+   "minecraft:custom_name": {
+    "text": "고죠의 열쇠",
+    "color": "aqua",
+    "bold": true,
+    "italic": false
+   },
+   "minecraft:enchantment_glint_override": true
+  }
+ }
+}

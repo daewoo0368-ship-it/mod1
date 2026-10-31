@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:yellow_concrete",
+  "minecraft:glowstone"
+ ],
+ "result": {
+  "id": "jjk:sun_stone",
+  "count": 1
+ }
+}

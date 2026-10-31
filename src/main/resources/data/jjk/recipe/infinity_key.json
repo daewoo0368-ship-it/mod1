@@ -1,0 +1,7 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": ["GNG", "DCD", "GSG"],
+ "key": {"G": "jjk:golden_clasp", "N": "minecraft:nether_star", "D": "minecraft:diamond_block", "C": "jjk:commandation", "S": "minecraft:netherite_ingot"},
+ "result": {"id": "jjk:infinity_key", "count": 1, "components": {"minecraft:custom_name": {"text": "인피니티 키", "color": "aqua", "bold": true, "italic": false}, "minecraft:enchantment_glint_override": true}}
+}

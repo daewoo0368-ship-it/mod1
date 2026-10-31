@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "jjk:super_block"
+ },
+ "result": {
+  "id": "jjk:quantum_block",
+  "count": 1
+ }
+}

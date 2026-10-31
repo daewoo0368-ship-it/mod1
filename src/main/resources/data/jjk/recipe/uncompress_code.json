@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:code"
+ ],
+ "result": {
+  "id": "jjk:quantum_block",
+  "count": 9
+ }
+}

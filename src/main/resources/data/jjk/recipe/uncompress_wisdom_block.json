@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:wisdom_block"
+ ],
+ "result": {
+  "id": "jjk:quantum",
+  "count": 9
+ }
+}

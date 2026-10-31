@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:iron_ingot",
+  "minecraft:iron_nugget",
+  "minecraft:gunpowder"
+ ],
+ "result": {
+  "id": "jjk:nob_hairpin",
+  "count": 1
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GBG",
+  "BSB",
+  "GBG"
+ ],
+ "key": {
+  "G": "minecraft:gold_ingot",
+  "B": "minecraft:book",
+  "S": "minecraft:gold_block"
+ },
+ "result": {
+  "id": "jjk:deadly_sentencing",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「주복사사」",
+    "color": "gold",
+    "italic": false
+   }
+  }
+ }
+}

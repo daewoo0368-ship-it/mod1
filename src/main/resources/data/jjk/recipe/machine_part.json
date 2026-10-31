@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:iron_block",
+  "minecraft:redstone_block",
+  "minecraft:emerald"
+ ],
+ "result": {
+  "id": "jjk:machine_part",
+  "count": 1
+ }
+}

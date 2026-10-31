@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:redstone_block",
+  "minecraft:arrow",
+  "minecraft:ghast_tear"
+ ],
+ "result": {
+  "id": "jjk:blood_pierce",
+  "count": 1
+ }
+}

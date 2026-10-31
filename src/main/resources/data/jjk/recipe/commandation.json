@@ -1,0 +1,6 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": ["jjk:error_common", "jjk:error_copy", "jjk:error_chain", "jjk:purify_object"],
+ "result": {"id": "jjk:commandation", "count": 1, "components": {"minecraft:custom_name": {"text": "커맨데이션", "color": "#FFD84A", "italic": false}, "minecraft:enchantment_glint_override": true}}
+}

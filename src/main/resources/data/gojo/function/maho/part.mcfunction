@@ -1,0 +1,1 @@
+$data merge entity @s {Tags:["gojo.mpart","gojo.mnew","$(tag)","$(tag2)"],teleport_duration:3,block_state:{Name:"minecraft:$(b)"},transformation:{left_rotation:$(l),right_rotation:[0f,0f,0f,1f],translation:$(t),scale:$(s)}}

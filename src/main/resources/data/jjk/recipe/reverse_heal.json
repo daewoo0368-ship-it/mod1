@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:glistering_melon_slice",
+  "minecraft:ghast_tear",
+  "minecraft:gold_ingot"
+ ],
+ "result": {
+  "id": "jjk:reverse_heal",
+  "count": 1
+ }
+}

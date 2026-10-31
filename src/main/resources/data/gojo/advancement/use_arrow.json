@@ -1,0 +1,1 @@
+{"criteria": {"a": {"trigger": "minecraft:using_item", "conditions": {"item": {"items": ["jjk:fuga"]}}}}, "rewards": {"function": "gojo:use/arrow"}}

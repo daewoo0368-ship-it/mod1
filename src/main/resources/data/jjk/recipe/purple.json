@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "jjk:blue",
+  "jjk:red",
+  "minecraft:amethyst_block",
+  "minecraft:nether_star"
+ ],
+ "result": {
+  "id": "jjk:purple",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "허식 「무라사키」",
+    "color": "dark_purple",
+    "italic": false
+   }
+  }
+ }
+}

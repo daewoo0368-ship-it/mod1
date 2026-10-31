@@ -1,0 +1,26 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NNN",
+  "BWB",
+  "BDB"
+ ],
+ "key": {
+  "N": "minecraft:red_nether_bricks",
+  "B": "minecraft:bone_block",
+  "W": "minecraft:wither_skeleton_skull",
+  "D": "jjk:dismantle"
+ },
+ "result": {
+  "id": "jjk:malevolent_shrine",
+  "count": 1,
+  "components": {
+   "minecraft:item_name": {
+    "text": "영역전개 「복마어주자」",
+    "color": "dark_red",
+    "italic": false
+   }
+  }
+ }
+}
